@@ -513,7 +513,7 @@ impl Builder {
 
     /// Sets the timeout after which requests will abort if they aren't finished.
     pub fn timeout(mut self, timeout: Duration) -> Self {
-        self.tp.timeout = timeout;
+        self.tp.timeout = Duration::from_secs(60);
         self
     }
 
