@@ -94,7 +94,7 @@ impl Default for SimpleHttpTransport {
             #[cfg(fuzzing)]
             timeout: Duration::from_millis(1),
             #[cfg(not(fuzzing))]
-            timeout: Duration::from_secs(60),
+            timeout: Duration::from_secs(120),
             basic_auth: None,
             #[cfg(feature = "proxy")]
             proxy_addr: net::SocketAddr::new(
@@ -513,7 +513,7 @@ impl Builder {
 
     /// Sets the timeout after which requests will abort if they aren't finished.
     pub fn timeout(mut self, timeout: Duration) -> Self {
-        self.tp.timeout = Duration::from_secs(60);
+        self.tp.timeout = Duration::from_secs(120);
         self
     }
 
